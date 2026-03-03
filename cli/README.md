@@ -1,6 +1,6 @@
 # pff
 
-CLI installer for [Product Flow Factory (PFF)](https://github.com/xmaiconx/product-flow-factory).
+CLI installer for [Product Flow Factory (PFF)](https://github.com/brabos-ai/product-flow-factory).
 
 ## Install and run
 
@@ -59,5 +59,5 @@ npx pff uninstall --force
 
 ## Links
 
-- Repository: https://github.com/xmaiconx/product-flow-factory
-- Issues: https://github.com/xmaiconx/product-flow-factory/issues
+- Repository: https://github.com/brabos-ai/product-flow-factory
+- Issues: https://github.com/brabos-ai/product-flow-factory/issues

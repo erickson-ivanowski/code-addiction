@@ -5,11 +5,11 @@
   "type": "module",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/xmaiconx/product-flow-factory.git"
+    "url": "git+https://github.com/brabos-ai/product-flow-factory.git"
   },
-  "homepage": "https://github.com/xmaiconx/product-flow-factory#readme",
+  "homepage": "https://github.com/brabos-ai/product-flow-factory#readme",
   "bugs": {
-    "url": "https://github.com/xmaiconx/product-flow-factory/issues"
+    "url": "https://github.com/brabos-ai/product-flow-factory/issues"
   },
   "bin": {
     "productflow": "./bin/pff.js"

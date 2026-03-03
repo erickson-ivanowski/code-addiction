@@ -288,6 +288,33 @@ describe('resolveInstallSource', () => {
     });
   });
 
+  it('falls back to main branch when repository has no releases', async () => {
+    const latestTagResolver = async () => {
+      throw new Error('Repository brabos-ai/product-flow-factory not found or has no releases.');
+    };
+
+    const source = await resolveInstallSource(undefined, latestTagResolver);
+
+    expect(source).toEqual({
+      source: 'branch',
+      manifestVersion: 'main',
+      releaseTag: null,
+      ref: 'main',
+      downloadType: 'branch',
+      downloadValue: 'main',
+    });
+  });
+
+  it('rethrows unexpected errors from latest tag resolver', async () => {
+    const latestTagResolver = async () => {
+      throw new Error('GitHub API error: 500 Internal Server Error');
+    };
+
+    await expect(resolveInstallSource(undefined, latestTagResolver)).rejects.toThrow(
+      'GitHub API error: 500'
+    );
+  });
+
   it('uses main branch when version is main', async () => {
     const source = await resolveInstallSource('main');
 

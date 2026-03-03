@@ -91,15 +91,30 @@ export function writeManifest(cwd, version, providers, files, releaseTag, metada
  */
 export async function resolveInstallSource(requestedVersion, latestTagResolver = getLatestTag) {
   if (!requestedVersion) {
-    const tag = await latestTagResolver();
-    return {
-      source: 'release',
-      manifestVersion: tag,
-      releaseTag: tag,
-      ref: null,
-      downloadType: 'tag',
-      downloadValue: tag,
-    };
+    try {
+      const tag = await latestTagResolver();
+      return {
+        source: 'release',
+        manifestVersion: tag,
+        releaseTag: tag,
+        ref: null,
+        downloadType: 'tag',
+        downloadValue: tag,
+      };
+    } catch (error) {
+      // Repositories without releases should still be installable via main branch.
+      if (error instanceof Error && /not found or has no releases/i.test(error.message)) {
+        return {
+          source: 'branch',
+          manifestVersion: 'main',
+          releaseTag: null,
+          ref: 'main',
+          downloadType: 'branch',
+          downloadValue: 'main',
+        };
+      }
+      throw error;
+    }
   }
 
   if (requestedVersion === 'main') {
@@ -252,6 +267,6 @@ export async function install(cwd, options = {}) {
       `Next steps:\n` +
       `  1. Open your AI editor and run: /pff-init\n` +
       `  2. Follow the onboarding to configure your project\n\n` +
-      `Docs: https://github.com/xmaiconx/product-flow-factory`
+      `Docs: https://github.com/brabos-ai/product-flow-factory`
   );
 }

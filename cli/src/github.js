@@ -1,4 +1,4 @@
-const REPO = 'xmaiconx/product-flow-factory';
+const REPO = 'brabos-ai/product-flow-factory';
 const API_BASE = 'https://api.github.com';
 
 /**
