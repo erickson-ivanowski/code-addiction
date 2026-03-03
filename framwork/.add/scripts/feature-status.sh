@@ -3,7 +3,6 @@
 # =============================================================================
 # Feature Status (v3 - Token Optimized)
 # Output compacto para agentes de desenvolvimento
-# Integra com .add/context.json para state persistente
 # =============================================================================
 
 # P1 - FIX: adicionar -u (variaveis nao definidas) e pipefail (falhas em pipes)
@@ -16,12 +15,6 @@ set -euo pipefail
 # P11 - FIX: verificar dependencia git
 if ! command -v git &>/dev/null; then
     echo "ERROR:git not found in PATH" >&2
-    exit 1
-fi
-
-# P11 - FIX: verificar dependencia jq
-if ! command -v jq &>/dev/null; then
-    echo "ERROR:jq not found in PATH" >&2
     exit 1
 fi
 
@@ -338,32 +331,6 @@ if [ -d "$FEATURES_DIR" ]; then
             fi
         done <<< "$CHANGELOGS"
         echo "CHANGELOGS_PATH:docs/features/{F*}/changelog.md"
-    fi
-fi
-
-# =============================================================================
-# OUTPUT: CONTEXT (from .add/context.json if exists)
-# =============================================================================
-
-CONTEXT_FILE=".add/context.json"
-if [ -f "$CONTEXT_FILE" ]; then
-    # Extract relevant fields, output minified
-    CTX=$(jq -c '{
-        current: .current,
-        phase: (if .current then .features[.current].phase else null end),
-        pending: (if .current then (.features[.current].pending // []) else [] end),
-        session: (if .session.awaiting then {awaiting: .session.awaiting, next: .session.next_suggested} else null end),
-        execution: (if .execution.status and .execution.status != "idle" then .execution else null end)
-    } | with_entries(select(.value != null and .value != [] and .value != {}))' "$CONTEXT_FILE" 2>/dev/null || echo "{}")
-
-    [ "$CTX" != "{}" ] && echo "CTX:$CTX"
-
-    # Warn if execution was interrupted
-    EXEC_STATUS=$(jq -r '.execution.status // "idle"' "$CONTEXT_FILE" 2>/dev/null)
-    # P8 - FIX: usar = em vez de == dentro de [ ] para compatibilidade POSIX
-    if [ "$EXEC_STATUS" = "running" ]; then
-        EXEC_ACTION=$(jq -r '.execution.action // "unknown"' "$CONTEXT_FILE" 2>/dev/null)
-        echo "WARN:execution_interrupted action=$EXEC_ACTION"
     fi
 fi
 
