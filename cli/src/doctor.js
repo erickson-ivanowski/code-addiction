@@ -46,7 +46,7 @@ function checkGit() {
  * @param {string} cwd
  * @returns {{ok: boolean, exists: boolean, hasFiles: boolean}}
  */
-function checkFndDir(cwd) {
+function checkPffDir(cwd) {
   const pffDir = path.join(cwd, '.pff');
   const exists = fs.existsSync(pffDir);
   let hasFiles = false;
@@ -101,7 +101,7 @@ export async function doctor(cwd) {
 
   const nodeCheck = checkNode();
   const gitCheck = await checkGit();
-  const pffCheck = checkFndDir(cwd);
+  const pffCheck = checkPffDir(cwd);
   const manifestCheck = checkManifest(cwd);
 
   s.stop('Checks complete.');
