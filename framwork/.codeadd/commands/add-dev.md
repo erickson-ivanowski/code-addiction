@@ -795,17 +795,19 @@ bash .codeadd/scripts/log-jsonl.sh "docs/features/${FEATURE_ID}/iterations.jsonl
 
 ### 12.2 Git Tag Checkpoint (PRD0032 — Universal)
 
-**ALWAYS create a git tag after successful implementation:**
+**ALWAYS create a checkpoint tag after successful implementation:**
 
 ```bash
 # Feature simples
-git tag "${FEATURE_ID}-done"
+git tag "checkpoint/${FEATURE_ID}-done"
 
 # Subfeature in epic (HAS_EPIC=true)
-git tag "${FEATURE_ID}-${EPIC_CURRENT_SF}-done"
+git tag "checkpoint/${FEATURE_ID}-${EPIC_CURRENT_SF}-done"
 ```
 
 **⛔ DO NOT skip tag creation. This enables rollback and progress tracking.**
+
+**NOTE:** Checkpoint tags use `checkpoint/` prefix to separate from release tags (`v*`). These tags are temporary — cleaned up automatically by `/add-done` during merge.
 
 ### 12.3 Update epic.md (IF HAS_EPIC=true)
 

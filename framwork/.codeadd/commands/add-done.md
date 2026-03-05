@@ -552,7 +552,9 @@ Files: [count from CHANGED_FILES]
 bash .codeadd/scripts/done.sh --merge
 ```
 
-**⛔ DO NOT USE: Bash for git add/commit/push manually. done.sh --merge handles everything (commit, push, merge, cleanup).**
+**⛔ DO NOT USE: Bash for git add/commit/push manually. done.sh --merge handles everything (commit, push, merge, checkpoint cleanup, branch cleanup).**
+
+**NOTE:** done.sh --merge automatically deletes all `checkpoint/*` tags for the feature (local + remote). These temporary tags were created by `/add-dev` during implementation and are no longer needed after merge.
 
 ---
 

@@ -279,8 +279,8 @@ teardown() {
 @test "exibe LAST_CHECKPOINT quando tag de checkpoint existe" {
   mkdir -p docs/features/F0001-test
   git checkout -b feature/F0001-test -q
-  git tag "F0001-test-v1-done"
+  git tag "checkpoint/F0001-test-v1-done"
   run "$SCRIPTS_DIR/feature-status.sh"
   [ "$status" -eq 0 ]
-  [[ "$output" == *"LAST_CHECKPOINT:F0001-test-v1-done"* ]]
+  [[ "$output" == *"LAST_CHECKPOINT:checkpoint/F0001-test-v1-done"* ]]
 }

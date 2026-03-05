@@ -271,8 +271,8 @@ if [ -n "$FEATURE_ID" ]; then
             fi
         fi
 
-        # Last git checkpoint tag for this feature
-        LAST_CHECKPOINT=$(git tag -l "${FEATURE_ID}-*-done" "${FEATURE_ID}-done" 2>/dev/null | sort -r | head -1)
+        # Last git checkpoint tag for this feature (checkpoint/ prefix)
+        LAST_CHECKPOINT=$(git tag -l "checkpoint/${FEATURE_ID}-*-done" "checkpoint/${FEATURE_ID}-done" 2>/dev/null | sort -r | head -1)
         [ -n "$LAST_CHECKPOINT" ] && echo "LAST_CHECKPOINT:$LAST_CHECKPOINT" || true
 
     else
