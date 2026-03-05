@@ -53,7 +53,7 @@ IF ECOSYSTEM-MAP NOT LOADED:
 **EXECUTE BEFORE any response:**
 
 ```bash
-cat .codeadd/skills/add-ecosystem-map/SKILL.md
+cat .codeadd/skills/code-addiction-ecosystem/SKILL.md
 ```
 
 This file contains:

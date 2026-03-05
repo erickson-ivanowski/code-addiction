@@ -182,7 +182,7 @@ Glob: [produto]/.[provider]*/
 **LER (se existirem):**
 
 ```
-.[provider]/skills/add-ecosystem-map/SKILL.md  # Visão consolidada do add-pro (commands, skills, dependências)
+.[provider]/skills/code-addiction-ecosystem/SKILL.md  # Visão consolidada do add-pro (commands, skills, dependências)
 docs/strategy/ADD-ECOSYSTEM-STRATEGY.md        # Estratégia, tiers, anti-pirataria
 docs/strategy/ADD-MASTER-DOCUMENT-v4.md        # Documento mestre, pirâmide, jornada
 [produto]/README.md                            # Contexto específico do produto

@@ -215,7 +215,7 @@ Aprova esse design?
 
 ```
 .claude\skills\building-commands\SKILL.md           # SEMPRE
-.claude/skills/add-ecosystem-map/SKILL.md    # SEMPRE (visão do ecossistema)
+.claude/skills/code-addiction-ecosystem/SKILL.md    # SEMPRE (visão do ecossistema)
 .claude/skills/token-efficiency/             # SEMPRE
 .claude/skills/documentation-style/          # Se gerar docs
 ```
@@ -418,7 +418,7 @@ docs/changelog/YYYY-MM-DD-[action]-[what].md
 
 **SE produto = add-pro E tipo = command ou skill:**
 
-1. Ler `.claude/skills/add-ecosystem-map/SKILL.md`
+1. Ler `.claude/skills/code-addiction-ecosystem/SKILL.md`
 2. Verificar se o artefato já está listado
 3. **SE novo:** Adicionar entrada na tabela correspondente
 4. **SE modificado:** Atualizar descrição se necessário
