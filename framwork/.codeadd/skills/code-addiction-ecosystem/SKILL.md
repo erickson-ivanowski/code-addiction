@@ -19,7 +19,7 @@ description: Visao consolidada do add-pro - commands, skills, relacoes e depende
 | add-autopilot | Implementacao autonoma sem interacao. Suporta `/autopilot feature N` para Epics | backend/frontend/database |
 | add-review | Revisao de codigo, auto-correcao | code-review, delivery-validation |
 | add-done | Finalizar feature, gera changelog. Valida epics + requisitos. Detecta branch protection e roteia para PR ou merge direto | documentation-style |
-| add-hotfix | Correcao urgente dual-mode: fix em feature existente (F[XXXX]) ou standalone (H[XXXX]). Usa template (.codeadd/templates/hotfix-template.md) | backend/frontend conforme area |
+| add-hotfix | Correcao urgente com ID global (H[NNNN]). Cria doc isolado em docs/[NNNN]H-*, documenta relacoes em related.md. Usa template (.codeadd/templates/hotfix.md) | backend/frontend conforme area |
 | add-init | Project onboarding - 3 questions (name, level, language), flat owner.md, optional product.md | product-discovery (optional) |
 | add-brainstorm | Explorar ideias (READ-ONLY) | - |
 | add-audit | Analise tecnica completa do projeto | audit, architecture-discovery |
@@ -82,14 +82,3 @@ description: Visao consolidada do add-pro - commands, skills, relacoes e depende
 | Emergencia | hotfix -> done | Bug critico em producao |
 | Exploracao | brainstorm -> feature -> ... | Nao sabe por onde comecar |
 | Analise | audit | Verificar saude do projeto |
-
-## Last Updated
-
-2026-03-05 - PRD0003: add /add-sync command, add --yolo + next steps to all commands, refactor add-autopilot (command-as-reference v4), add-done absorbs PR detection, remove orphan using-git-worktrees
-2026-03-05 - update add-init (simplified to 3 questions, flat owner.md, optional product.md) + add OWNER Context to all commands + remove add-update
-2026-02-18 - add skill dev-environment-setup (WSL/git/jq/gh setup, VS Code settings.json merge)
-2026-02-06 - refactor add-hotfix: delete create-hotfix-docs.sh, add template, simplify command
-2026-02-06 - update command add-hotfix (dual-mode: feature fix + standalone)
-2026-01-23 - rename add-health-check -> add-audit, skill health-check -> audit
-2026-01-23 - refactor /add + cleanup ecosystem-map
-2026-01-23 - update commands add-plan, add-dev, add-autopilot, add-done
