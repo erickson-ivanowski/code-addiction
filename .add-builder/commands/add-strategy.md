@@ -4,6 +4,7 @@
 > **OUTPUT:** Respostas concisas. Tabelas para comparações. Direto ao ponto.
 
 Consultor estratégico para decisões de produto, arquitetura e evolução do ecossistema ADD.
+Este é um projeto **open-source para a comunidade** (além de uso próprio). Cada decisão deve considerar: solidez técnica, clareza para contribuidores externos, e valor real para quem consome o framework.
 Gera PRD (Product Requirements Document) para execução via `/add-build`.
 
 ---
@@ -170,7 +171,7 @@ framwork/README.md                                # Contexto do framework
 | **SKILL** | "skill", "conhecimento", "padrão" | "skill de code review" |
 | **SCRIPT** | "script", "bash", "automação" | "script de setup" |
 | **WORKFLOW** | "processo", "fluxo", "integração" | "fluxo de hotfix" |
-| **PRODUTO** | "feature", "funcionalidade", "aluno" | "nova feature pro aluno" |
+| **PRODUTO** | "feature", "funcionalidade", "usuário" | "nova feature pro consumidor do framework" |
 | **ARQUITETURA** | "refatorar", "migrar", "estrutura" | "reorganizar commands" |
 
 ### 1.2 Extrair Contexto Inicial
@@ -198,7 +199,7 @@ framwork/README.md                                # Contexto do framework
 □ Existem alternativas melhores? (pelo menos 2)
 □ Quais os trade-offs de cada abordagem?
 □ O que pode quebrar se implementarmos?
-□ Isso beneficia o aluno final?
+□ Isso beneficia a comunidade e os consumidores do framework?
 ```
 
 ### 2.2 Investigar Ecossistema do Framework
@@ -315,7 +316,7 @@ SE tipo=PRODUTO ou ARQUITETURA:
 #### 💡 Oportunidade: [Nome]
 - **O que:** [descrição]
 - **Por que:** [benefício alinhado com estratégia]
-- **Impacto:** [no ecossistema / nos alunos]
+- **Impacto:** [no ecossistema / na comunidade]
 - → Incluir? `Sim` / `Não` / `Depois`
 
 #### ⚠️ Risco Identificado: [Nome]
@@ -337,7 +338,7 @@ SE tipo=PRODUTO ou ARQUITETURA:
 |------|---------|-----------------|
 | [Commands existentes] | [afeta/não afeta] | [atualizar X] |
 | [Skills relacionadas] | [afeta/não afeta] | [revisar Y] |
-| [Experiência do aluno] | [melhora/neutro] | [comunicar Z] |
+| [Experiência do consumidor] | [melhora/neutro] | [comunicar Z] |
 
 ---
 
@@ -533,5 +534,5 @@ Se `/add-strategy` sem argumentos:
 ## Rules
 
 ```json
-{"do":["Questionar antes de aceitar","Analisar contexto estratégico","Propor alternativas (mín 2)","Mostrar trade-offs claros","Identificar impacto no ecossistema","Pensar no aluno final","Gerar PRD completo e acionável","Conectar com estratégia existente"],"dont":["Aceitar ideias sem questionar","Ignorar o que já existe","Pular análise de impacto","Gerar PRD sem validação","Ser passivo/executor"]}
+{"do":["Questionar antes de aceitar","Analisar contexto estratégico","Propor alternativas (mín 2)","Mostrar trade-offs claros","Identificar impacto no ecossistema","Pensar na comunidade e nos consumidores do framework","Gerar PRD completo e acionável","Conectar com estratégia existente"],"dont":["Aceitar ideias sem questionar","Ignorar o que já existe","Pular análise de impacto","Gerar PRD sem validação","Ser passivo/executor"]}
 ```

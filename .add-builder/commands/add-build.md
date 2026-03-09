@@ -223,6 +223,16 @@ SE precisar inserir passo entre existentes:
 
 #### Command (framwork/.claude/commands/*.md + framwork/.codeadd/commands/*.md)
 
+**Registrar em `framwork/provider-map.json` (OBRIGATÓRIO ao criar novo command):**
+
+```json
+"commands": {
+  "[name]": { "description": "[description from command frontmatter]" }
+}
+```
+
+Providers padrão = todos (claude, codex, antigrav, kilocode, opencode). Omitir campo `providers` usa todos.
+
 **Estrutura obrigatória:**
 
 ```markdown
@@ -264,6 +274,17 @@ SE precisar inserir passo entre existentes:
 - `framwork/.agent/workflows/` (Agent - se aplicável)
 
 #### Skill (framwork/.codeadd/skills/*/SKILL.md + framwork/.agents/skills/*/SKILL.md)
+
+**Registrar em `framwork/provider-map.json` (OBRIGATÓRIO ao criar nova skill):**
+
+```json
+"skills": {
+  "[name]": { "providers": ["claude", "antigrav", "kilocode", "opencode"] }
+}
+```
+
+Usar `["antigrav"]` para skills internas (não expostas ao usuário final).
+
 
 **Estrutura obrigatória:**
 
@@ -415,5 +436,27 @@ docs/changelog/YYYY-MM-DD-[action]-[what].md
 ## Rules
 
 ```json
-{"do":["Carregar PRD/contexto PRIMEIRO","Apresentar design ANTES de implementar","Carregar building-commands skill SEMPRE","Aplicar TODOS os padrões da skill","Testar mentalmente ANTES de finalizar","Documentar mudanças e atualizar ecosystem map","Usar numeração sequencial INTEIRA (1,2,3)","Renumerar passos se inserir novo","Criar artefatos em TODOS os provider dirs relevantes de framwork/"],"dont":["Implementar sem PRD/contexto","Pular aprovação de design","Ignorar building-commands skill","Usar linguagem informativa","Criar gates genéricos (sem ferramentas)","Usar Phase em vez de STEP","Finalizar sem teste mental","Usar numeração fracionada (2.5, 6.5)","Encaixar passos sem renumerar","Escrever fora de framwork/"]}
+ALWAYS:
+- Carregar PRD/contexto PRIMEIRO
+- Apresentar design ANTES de implementar
+- Carregar building-commands skill SEMPRE
+- Aplicar TODOS os padrões da skill
+- Testar mentalmente ANTES de finalizar
+- Documentar mudanças e atualizar ecosystem map
+- Usar numeração sequencial INTEIRA (1,2,3)
+- Renumerar passos se inserir novo
+- Registrar novo command/skill em framwork/provider-map.json
+- Criar source file em framwork/.codeadd/ (source of truth)
+
+NEVER:
+- Implementar sem PRD/contexto
+- Pular aprovação de design
+- Ignorar building-commands skill
+- Usar linguagem informativa
+- Criar gates genéricos (sem ferramentas)
+- Usar Phase em vez de STEP
+- Finalizar sem teste mental
+- Usar numeração fracionada (2.5, 6.5)
+- Encaixar passos sem renumerar
+- Criar provider files manualmente (use framwork/.codeadd/ + provider-map.json)
 ```
