@@ -79,14 +79,13 @@ Scope = the main module/directory affected (optional, use when clear).
 
 **STEP 3 — Generate message:**
 Apply adaptive logic (≤ 3 vs > 3 files).
-- **Default:** present the generated message and wait for confirmation or adjustment.
-- **`--silent` flag:** skip confirmation — commit immediately with generated message.
+- **Default:** commit immediately with generated message — no confirmation needed.
+- **`--confirm` flag:** show the generated message and wait for confirmation or adjustment before committing.
 
 **STEP 4 — Handle staging:**
 - If staged changes exist → use them as-is
-- If nothing staged → run `git add -A`
-  - **Default:** inform the user before running
-  - **`--silent`:** run without asking
+- If nothing staged → run `git add -A` immediately
+  - **`--confirm`:** inform the user before running
 
 **⚠️ Security check (ALWAYS — even with `--silent`):**
 If `.env`, `*.key`, `secrets.*`, `*.pem`, `*.p12` appear in the output of `git status --short`, STOP and warn — never auto-stage sensitive files silently.
@@ -125,8 +124,8 @@ refactor: extract service layer from controllers
 ## Rules
 
 ALWAYS:
-- Show the generated message before committing — unless `--silent` flag is set
-- Warn about sensitive files before staging — even with `--silent`, NEVER auto-stage `.env`, `*.key`, `secrets.*`, `*.pem`
+- Commit immediately by default — show message only if `--confirm` flag is set
+- Warn about sensitive files before staging — regardless of flags, NEVER auto-stage `.env`, `*.key`, `secrets.*`, `*.pem`
 - Clarify to the user: this is for mid-workflow commits, use `/add-done` to finalize the branch
 
 NEVER:
