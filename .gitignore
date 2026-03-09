@@ -146,10 +146,3 @@ docs/*
 .pff-builder/*
 nul
 tmpclaude*
-
-# Generated provider dirs (compiled by scripts/build.js before release)
-framwork/.claude/
-framwork/.agent/
-framwork/.agents/
-framwork/.kilocode/
-framwork/.opencode/

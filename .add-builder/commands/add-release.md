@@ -247,6 +247,8 @@ Committed and pushed to main.
 
 ## STEP 6: Build Provider Files
 
+### 6.1 Run build
+
 Execute:
 ```bash
 node scripts/build.js
@@ -256,9 +258,18 @@ If exit code is non-zero:
 - Display full error output.
 - Stop execution.
 
+### 6.2 Commit generated files
+
+Execute:
+```bash
+git add framwork/.claude framwork/.agent framwork/.agents framwork/.kilocode framwork/.opencode
+git commit -m "chore: regenerate provider files for release [NEXT_VERSION]"
+git push origin main
+```
+
 On success, display:
 ```text
-Provider files built successfully.
+Provider files built and committed.
 ```
 
 ---
