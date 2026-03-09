@@ -17,6 +17,22 @@ function ensureDir(filePath) {
   fs.mkdirSync(path.dirname(filePath), { recursive: true });
 }
 
+function copyDirRecursive(src, dest) {
+  let count = 0;
+  fs.mkdirSync(dest, { recursive: true });
+  for (const entry of fs.readdirSync(src, { withFileTypes: true })) {
+    const srcPath = path.join(src, entry.name);
+    const destPath = path.join(dest, entry.name);
+    if (entry.isDirectory()) {
+      count += copyDirRecursive(srcPath, destPath);
+    } else {
+      fs.copyFileSync(srcPath, destPath);
+      count++;
+    }
+  }
+  return count;
+}
+
 function isSkillPath(pattern) {
   return pattern.includes('SKILL.md');
 }
@@ -64,7 +80,8 @@ function buildSkills(map) {
   let count = 0;
 
   for (const [name, skill] of Object.entries(map.skills)) {
-    const sourcePath = path.join(ROOT, 'framwork', '.codeadd', 'skills', name, 'SKILL.md');
+    const sourceDir = path.join(ROOT, 'framwork', '.codeadd', 'skills', name);
+    const sourcePath = path.join(sourceDir, 'SKILL.md');
 
     if (!fs.existsSync(sourcePath)) {
       console.warn(`  SKIP (not found): framwork/.codeadd/skills/${name}/SKILL.md`);
@@ -79,11 +96,26 @@ function buildSkills(map) {
 
       const pattern = provider.skills.replace('{name}', name);
       const outPath = path.join(ROOT, provider.dir, pattern);
+      const outDir = path.dirname(outPath);
       const header = `<!-- AUTO-GENERATED - DO NOT EDIT. Source: framwork/.codeadd/skills/${name}/SKILL.md -->\n`;
 
       ensureDir(outPath);
       fs.writeFileSync(outPath, header + source, 'utf8');
       count++;
+
+      // Copy extra files and subdirectories (everything except SKILL.md)
+      for (const entry of fs.readdirSync(sourceDir, { withFileTypes: true })) {
+        if (entry.name === 'SKILL.md') continue;
+        const srcEntry = path.join(sourceDir, entry.name);
+        const destEntry = path.join(outDir, entry.name);
+        if (entry.isDirectory()) {
+          count += copyDirRecursive(srcEntry, destEntry);
+        } else {
+          fs.mkdirSync(outDir, { recursive: true });
+          fs.copyFileSync(srcEntry, destEntry);
+          count++;
+        }
+      }
     }
   }
   return count;
