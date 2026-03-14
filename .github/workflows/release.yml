@@ -57,12 +57,11 @@ jobs:
         working-directory: .
         run: |
           TAG=${GITHUB_REF#refs/tags/}
-          cd framwork
           DIRS=""
-          for dir in .codeadd/scripts .codeadd/fragments .codeadd/templates .claude .agent .agents .kilocode .opencode; do
-            [ -d "$dir" ] && DIRS="$DIRS $dir"
+          for subdir in .codeadd/scripts .codeadd/fragments .codeadd/templates .claude .agent .agents .kilocode .opencode; do
+            [ -d "framwork/$subdir" ] && DIRS="$DIRS framwork/$subdir"
           done
-          zip -r "../code-addiction-${TAG}.zip" $DIRS
+          zip -r "code-addiction-${TAG}.zip" $DIRS
           echo "ASSET_NAME=code-addiction-${TAG}.zip" >> "$GITHUB_ENV"
 
       - name: Create GitHub Release and upload asset
