@@ -6,6 +6,8 @@
 
 AI-powered development workflows that make you addicted to shipping code. Production-ready commands, scripts, and skills for AI coding assistants, with a single CLI installer.
 
+**Official Framework Site**: [code.brabos.ai](https://code.brabos.ai) — your complete development workflow guide and documentation.
+
 ## Why this project exists
 
 Most AI coding setups are fragmented across custom prompts, scripts, and editor-specific conventions.
@@ -125,7 +127,43 @@ Contributions are welcome. Start here:
 - More provider adapters
 - Stronger validation and automated repair flows
 
+## Official Pages
+
+- **Framework**: [code.brabos.ai](https://code.brabos.ai)
+- **Repository**: [github.com/brabos-ai/code-addiction](https://github.com/brabos-ai/code-addiction)
+- **NPM Package**: [@codeadd](https://www.npmjs.com/package/codeadd)
+
+## Recent Releases
+
+### v0.2.15
+- **Date**: Latest
+- **Changes**: Version bump with improvements to provider architecture
+- **Status**: Stable
+
+### v0.2.14
+- **Date**: Recent
+- **Changes**: Stabilization and bug fixes
+- **Status**: Stable
+
+### v0.2.13
+- **Date**: Current
+- **Changes**:
+  - Compile all 15 providers in build + zip
+  - Updated package-lock with dependency consolidation
+  - Enhanced provider build system
+
+### Provider Expansion (10 New Providers)
+- Added 10 new provider integrations
+- Implemented priority ordering in install prompt
+- Improved provider discovery and selection
+
+### Provider-Only Install Architecture (PRD0018)
+- New installation architecture for provider-only workflows
+- Reduced installation footprint for users
+- Flexible provider selection during setup
+
 ## Support
 
+- Official site: [code.brabos.ai](https://code.brabos.ai)
 - Open a [GitHub Issue](https://github.com/brabos-ai/code-addiction/issues)
 - See [SUPPORT.md](./SUPPORT.md)
