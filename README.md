@@ -169,8 +169,6 @@ Latest releases available via `npx codeadd install --version <tag>`:
 - Priority ordering in installation prompts
 - Full feature list: [See GitHub Releases](https://github.com/brabos-ai/code-addiction/releases)
 
-**Note**: Installation only supports release tags (`v0.2.15`, etc). To install from a specific release, use `npx codeadd install --version <tag>`.
-
 ## Support
 
 - Official site: [code.brabos.ai](https://code.brabos.ai)
