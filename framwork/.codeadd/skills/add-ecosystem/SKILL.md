@@ -100,4 +100,5 @@ description: Visao consolidada do add-pro - commands, skills, relacoes e depende
 
 ## Last Updated
 
+2026-03-23 - sync: registered add.commit command, add-backend-architecture and add-frontend-architecture skills in provider-map; fixed add.audit phantom refs (add-audit→add-health-check); removed phantom add-test-specification from add.plan; updated web pages provider dirs (Codex→.agents/, Antigrav→.agent/)
 2026-03-20 - sync: regenerated ecosystem map via /add.sync (added add-backend-architecture, add-frontend-architecture)

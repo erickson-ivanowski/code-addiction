@@ -186,10 +186,12 @@
     "add.pr":        { "description": "Feature PR and changelog generator with automatic documentation" },
     "add.review":     { "description": "Feature code review specialist with auto-correction until 100% correct" },
     "add.test":      { "description": "Automated test generation targeting 80% coverage — detects framework, runs startup test, dispatches parallel area agents" },
-    "add.ux":        { "description": "Lightweight UX refinement - loads ux-design skill and applies to free-form instructions" }
+    "add.ux":        { "description": "Lightweight UX refinement - loads ux-design skill and applies to free-form instructions" },
+    "add.commit":    { "description": "Mid-workflow smart commit with adaptive Conventional Commits message based on changeset size" }
   },
   "skills": {
     "add-architecture-discovery":      {},
+    "add-backend-architecture":        {},
     "add-backend-development":         {},
     "add-code-review":                 {},
     "add-commit":                      {},
@@ -200,6 +202,7 @@
     "add-ecosystem":                   {},
     "add-feature-discovery":           {},
     "add-feature-specification":       {},
+    "add-frontend-architecture":       {},
     "add-frontend-development":        {},
     "add-health-check":                {},
     "add-landing-page-saas":           {},
