@@ -12,26 +12,26 @@
       ]
     },
     "codex": {
-      "dir": "framwork/.agent",
-      "commands": "workflows/{name}.md",
+      "dir": "framwork/.agents",
+      "commands": "skills/{name}/SKILL.md",
       "skills": "skills/{name}/SKILL.md",
-      "capabilities": { "hooks": true, "agentDispatch": true, "mcp": true, "nativeFormat": "md", "slashCommands": true },
+      "capabilities": { "hooks": true, "agentDispatch": true, "mcp": true, "nativeFormat": "md", "slashCommands": false },
       "docs": [
         "https://developers.openai.com/codex/config-advanced",
         "https://developers.openai.com/codex/mcp",
         "https://developers.openai.com/codex/subagents",
-        "https://developers.openai.com/codex/custom-prompts"
+        "https://developers.openai.com/codex/skills"
       ]
     },
     "antigrav": {
-      "dir": "framwork/.agents",
+      "dir": "framwork/.agent",
       "commands": "skills/{name}/SKILL.md",
       "skills": "skills/{name}/SKILL.md",
-      "capabilities": { "hooks": false, "agentDispatch": true, "mcp": true, "nativeFormat": "md", "slashCommands": false },
+      "capabilities": { "hooks": false, "agentDispatch": true, "mcp": true, "nativeFormat": "md", "slashCommands": true },
       "docs": [
-        "https://discuss.ai.google.dev/t/hooks-in-antigravity/120458",
+        "https://antigravity.google/docs/rules-workflows",
         "https://antigravity.google/docs/mcp",
-        "https://atamel.dev/posts/2026/01-19_parallel_agents_antigravity/"
+        "https://antigravity.google/docs/skills"
       ]
     },
     "kilocode": {
