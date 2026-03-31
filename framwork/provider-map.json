@@ -218,6 +218,7 @@
     "add-subagent-driven-development": {},
     "add-token-efficiency":            {},
     "add-updating-claude-documentation": {},
-    "add-ux-design":                   {}
+    "add-ux-design":                   {},
+    "add-resource-path-convention":    {}
   }
 }

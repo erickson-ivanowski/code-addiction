@@ -204,7 +204,7 @@ If feature is very simple (single component, < 5 files, no new database entities
 You are the PLANNING agent for feature ${FEATURE_ID}.
 
 ## MANDATORY: Load Command Reference (FIRST STEP)
-1. Read `.codeadd/commands/add.plan.md` — PRIMARY reference.
+1. Read `{{cmd:add.plan}}` — PRIMARY reference.
    Execute as if `--yolo` (skip [STOP] points, no confirmations).
 2. Run: `bash .codeadd/scripts/status.sh`
 3. Read feature docs as specified in add.plan.md
@@ -256,7 +256,7 @@ MUST generate Spec Checklist (PRD0034) at end of plan.md.
 
 ```
 ## MANDATORY: Load Command & Context (FIRST STEP)
-1. Read `.codeadd/commands/add.build.md` — reference for patterns and conventions.
+1. Read `{{cmd:add.build}}` — reference for patterns and conventions.
    Your scope is LIMITED to ${AREA} area only.
 2. Run: `bash .codeadd/scripts/status.sh`
 3. Read ALL files listed in TASK_DOCUMENTS
@@ -504,7 +504,7 @@ You are the CODE REVIEWER for feature ${FEATURE_ID}.
 Validate code AND product (requirements 100% implemented).
 
 ## MANDATORY: Load Command Reference (FIRST STEP)
-1. Read `.codeadd/commands/add.review.md` — PRIMARY reference.
+1. Read `{{cmd:add.review}}` — PRIMARY reference.
    Execute as if `--yolo` (skip [STOP] points, no confirmations).
 2. Run: `bash .codeadd/scripts/status.sh`
 3. Read feature docs as specified in add.review.md

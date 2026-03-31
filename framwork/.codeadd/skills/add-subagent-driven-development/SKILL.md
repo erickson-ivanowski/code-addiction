@@ -201,7 +201,7 @@ Dispatch review subagent with this prompt:
     [From task N report - FILES_CREATED + FILES_MODIFIED]
 
     ## SKILLS
-    - .codeadd/skills/code-review/SKILL.md
+    - {{skill:add-code-review/SKILL.md}}
 
     ## COORDINATOR NOTES
     - Verify implementation matches spec from TASK_DOCUMENTS
@@ -417,10 +417,10 @@ Maintain throughout session:
 - `bash .codeadd/scripts/architecture-discover.sh` - Codebase structure overview
 
 **Skills to compose:**
-- Backend: `.codeadd/skills/backend-development/SKILL.md`
-- Database: `.codeadd/skills/database-development/SKILL.md`
-- Frontend: `.codeadd/skills/frontend-development/SKILL.md` + `.codeadd/skills/ux-design/SKILL.md`
-- Review: `.codeadd/skills/code-review/SKILL.md`
+- Backend: `{{skill:add-backend-development/SKILL.md}}`
+- Database: `{{skill:add-database-development/SKILL.md}}`
+- Frontend: `{{skill:add-frontend-development/SKILL.md}}` + `{{skill:add-ux-design/SKILL.md}}`
+- Review: `{{skill:add-code-review/SKILL.md}}`
 
 ---
 
